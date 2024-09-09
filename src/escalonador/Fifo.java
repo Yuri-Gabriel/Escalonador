@@ -7,6 +7,11 @@ public class Fifo extends Escalonador {
 
 	public Fifo(Processo[] processos) {
 		super(processos);
+		this.setTempoMedioSaida();
+		this.setTempoMedioEspera();
+		System.out.println("FIFO");
+		System.out.println(this.getTempoMedioEspera());
+		System.out.println(this.getTempoMedioSaida());
 	}
 	
 	public void start() {
@@ -27,7 +32,6 @@ public class Fifo extends Escalonador {
 		this.tempoMedioSaida = total / this.getProcessos().length;
 	}
 
-	@Override
 	public void setTempoMedioEspera() {
 		double total = 0;
 		for(int i = 0; i < this.getProcessos().length; i++) {

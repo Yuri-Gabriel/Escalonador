@@ -4,11 +4,13 @@ public class Processo {
 	
 	private String name;
 	private StatusProcesso status;
+	private int chegada;
 	private int surto;
 	
-	public Processo(String nome, int surto) {
+	public Processo(String nome, int chegada, int surto) {
 		this.setName(nome);
 		this.setStatus(StatusProcesso.INICIANDO);
+		this.setChegada(chegada);
 		this.setSurto(surto);
 	}
 	
@@ -29,5 +31,13 @@ public class Processo {
 	}
 	public void setSurto(int tempoDeSurto) {
 		this.surto = tempoDeSurto;
+	}
+
+	public int getChegada() {
+		return chegada;
+	}
+
+	public void setChegada(int chegada) {
+		this.chegada = chegada;
 	}
 }
